@@ -1,7 +1,5 @@
-update=Tuesday, 2013 January 08 00:04:57
-last_client=eeschema
-[general]
-version=1
+update=Tuesday, 2013 January 08 00:16:41
+last_client=kicad
 [eeschema]
 version=1
 LibDir=library
@@ -12,3 +10,5 @@ RptLab=1
 LabSize=60
 [eeschema/libraries]
 LibName1=propeller-clock-components
+[general]
+version=1
