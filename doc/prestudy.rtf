@@ -32,8 +32,48 @@ Functional requirements\
    - Change "borders"\
    - ++\
 - Alarm clock?\
+\
+\
+The LED row must rotate by at least 2000 RPM. \
+\
+One single row of LEDs? Should the PCB be symmetric, with LEDs on both sides of the rotation? \
+ - Symmetric will probably be more stable? And give a stronger light? But requires more components.\
+\
+How many LEDs? Many MCUs have 32 GPIO pins (including the nRF51822).\
 
 \fs36 \
 Processing requirements (software design / MCU requirements)\
+
+\fs24 \
+(2000 RPM / 60s) = 33.33 RPs.\
+\
+33.33 RPs * 360 degrees = 12000 degrees / sec.\
+\
+1 / 12000 degrees / sec = 83.333 us / degree.\
+\
+That means, if we are to update the LEDs at every degree of rotation, we have to update them at 83.33 us intervals.\
+We might not need to do it this often?\
+
+\fs36 \
+\
 Hardware\
+\
+
+\fs28 Static PCB:
+\fs36 \
+
+\fs24 - 220 V AC -> 3.3V DC conversion. Maybe other voltages as well, for power transfer?\
+- Transfer of power to the rotating PCB\
+  - Static coil and rotating coil. Induce current in rotating coil by switching on and off the static coil with an H-bridge circuit (and MCU / timer666).\
+- Control of the rotator (at least should be possible to turn it on/off). Speed regulation? \
+\
+\
+
+\fs28 Rotating PCB:
+\fs24 \
+- MCU for controlling the LEDs\
+- Bluetooth Low Energy slave module.\
+   - Will the power transfer method / rotator make it difficult for RF performance in 2.4 GHz???\
+- Voltage regulator
+\fs36 \
 }
