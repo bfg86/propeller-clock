@@ -1,0 +1,2 @@
+<b>Propeller Clock</b>
+<p>A rotating row of LEDs controlled by a microcontroller. The project consists of two parts: one rotating and one static. The static part transfers power to the rotating part via an inductive coupling.</p>
